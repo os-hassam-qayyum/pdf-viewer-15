@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'pdf-viewer-15';
+  samplePDF =
+    'https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf';
 }
