@@ -1,0 +1,231 @@
+/* General styling for the PDF viewer */
+ngx-extended-pdf-viewer {
+  display: block;
+  border: 2px solid #007acc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f4f4f8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 22px; /* Set font size */
+}
+
+/* Toolbar customization */
+ngx-extended-pdf-viewer .toolbar {
+  background-color: #007acc; /* Toolbar background */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Hide/show specific controls in the toolbar */
+ngx-extended-pdf-viewer .toolbar .zoom,
+ngx-extended-pdf-viewer .toolbar .findbar {
+  display: none; /* Hide specific controls */
+}
+
+/* SVG customization */
+ngx-extended-pdf-viewer svg {
+  height: 30px; /* Set SVG height */
+}
+
+/* Add padding and alignment for controls */
+ngx-extended-pdf-viewer .toolbar button {
+  margin: 0 8px;
+  padding: 8px 12px;
+  background-color: #005b9a;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+ngx-extended-pdf-viewer .toolbar button:hover {
+  background-color: #004378;
+}
+
+ngx-extended-pdf-viewer .toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+ngx-extended-pdf-viewer .toolbar button svg {
+  fill: #fff;
+  height: 20px; /* Adjust SVG size */
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+  transform: scale(1);
+  transform-origin: left center;
+
+  #toolbarContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #toolbarViewer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #toolbarViewerLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    pdf-toggle-sidebar {
+      .toolbarButton {
+        background: none;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 30px;
+          height: 30px;
+          fill: #333;
+          transition: fill 0.3s;
+        }
+
+        &:hover {
+          svg {
+            fill: #007bff;
+          }
+        }
+
+        span {
+          margin-left: 5px;
+          font-size: 14px;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  #toolbarViewerMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #toolbarViewerRight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .paging-left,
+  .paging-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .paging-left button,
+  .paging-right button {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+
+    &:hover {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #333;
+      transition: fill 0.3s;
+    }
+
+    span {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+
+  .zoom-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .zoomIn,
+    .zoomOut {
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: #333;
+        transition: fill 0.3s;
+      }
+
+      &:hover {
+        svg {
+          fill: #007bff;
+        }
+      }
+    }
+
+    .zoom-dropdown {
+      select {
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+
+        option {
+          padding: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .toolbarLabel {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .toolbarField {
+    width: 40px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .hiddenTinyView {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .hiddenLargeView {
+      display: block;
+    }
+    .hiddenTinyView {
+      display: flex;
+    }
+  }
+}
